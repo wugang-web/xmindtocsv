@@ -47,12 +47,16 @@ def run():
 
     elif ext == "xmind":
         filePath = filePath.lstrip('"').rstrip('"')
-        logger.info("开始进行xmind转成csv....")
+        logger.info("开始进行xmind转成xls....")
         xmindtoxlsx.xmind_to_excel_file(filePath)
-        t = csv_xlsx_tool()
-        t.xlsx_to_csv(filePath[:-6] + '(1).xlsx')
-        logger.success("xmind已成功转换成csv ")
-        logger.info("csv文件见:{0}".format(filePath[:-6] + '(1).csv'))
+        os.rename(filePath[:-6] + '(1).xlsx', filePath[:-6] + '(1).xls')
+        # csv 转化
+        # t = csv_xlsx_tool()
+        # t.xlsx_to_csv(filePath[:-6] + '(1).xlsx')
+        # logger.success("xmind已成功转换成csv ")
+        # logger.info("csv文件见:{0}".format(filePath[:-6] + '(1).csv'))
+        logger.success("xmind已成功转换成xls ")
+        logger.info("csv文件见:{0}".format(filePath[:-6] + '(1).xls'))
     else:
         logger.error("待转换文件格式不支持；仅支持xlsx、xls、xmind")
 

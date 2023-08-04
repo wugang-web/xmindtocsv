@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['xmind2csv.py'],
-             pathex=[r"D:\python3.6\Lib\tools",r"D:\python3.6\Lib\testscript"],
+             pathex=[r"E:\xmind2excel\tools",r"E:\xmind2excel"],
              binaries=[],
              datas=[],
              hiddenimports=[],
